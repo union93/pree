@@ -1,0 +1,150 @@
+body{
+    position: relative;
+    background: #F4F4F4;
+}
+.logo{
+    position: absolute;
+    width: 234px;
+    height: 80px;
+    left: 550px;
+    top: 1px;
+    margine: 0 auto;
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 94px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #3C3C3C;
+}
+#btn_left{
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    left: 900px;
+    top: 70px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    background: #81A58B;
+    border: 0;
+    outline: 0;
+}
+#btn_right{
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    left: 1020px;
+    top: 70px;
+    background: #C4C4C4;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+.navbar{
+    width: 696px;
+    height: 30px;
+}
+.navbar ul li{
+    list-style: none;
+    float: left;
+    line-height: 25px;
+    text-align: center;
+}
+.navbar-item{
+    width: 80px;
+    text-decoration: none;
+    display: block;
+}
+.navbar-item:hover{ /*마우스가 오버시 변하는 스타일*/
+    color: red;
+}
+.navbar-item:active{
+    color: #3C3C3C;
+}
+.navbar-item:visited{
+    color: #3C3C3C;
+}
+
+#nav_post{
+    position: absolute;
+    /*width: 70px;
+    height: 30px;*/
+    left: 700px;
+    top: 140px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #6C6262;
+}
+#nav_practice{
+    position: absolute;
+    width: 175px;
+    height: 30px;
+    left: 780px;
+    top: 140px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #6C6262;
+}
+#nav_community{
+    position: absolute;
+    width: 112px;
+    height: 30px;
+    left: 950px;
+    top: 140px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #6C6262;
+}
+#nav_funding{
+    position: absolute;
+    width: 56px;
+    height: 30px;
+    left: 1080px;
+    top: 140px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    text-align: center;
+    color: #6C6262;
+}
+#nav_event{
+    position: absolute;
+    width: 84px;
+    height: 30px;
+    left: 1150px;
+    top: 140px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    color: #6C6262;
+}
+
+

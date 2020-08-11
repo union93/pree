@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign_up</title>
+</head>
+<body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id = page_wrap>
+    <div id = left_side_content>
+
+    </div>
+    <div id = mid_side_content>
+
+    </div>
+    <div id = right_side_content>
+        <div id = register_form>
+            <form>
+                <table>
+                    <tr>
+                        <td class="input" id="email_text">
+                            이메일
+                        </td>
+                        <td>
+                            <input type="email" id =email_input >
+                            <button id =email_check>중복 확인</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="input" id="nick_name">
+                            닉네임
+                        </td>
+                        <td>
+                            <input type="text" id =nick_name_input >
+                            <button id =nick_name_check>중복 확인</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="input" id="password_text">
+                            비밀번호
+                        </td>
+                        <td>
+                            <input type="password" id =password_input >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="input" id="password2_text">
+
+                        </td>
+                        <td>
+                           <input type="password" id =password2_input >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input" id="date_birth_text">
+                            생년월일
+                        </td>
+                        <td>
+                            <input type = date id = date_birth_input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input" id="phone_number_text">
+                            휴대전화
+                        </td>
+                        <td>
+                            <input type =text id = phone_number_input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            사진
+                        </td>
+                        <td>
+                            <button id="basic_image"> 기본 이미지로 등록하기 </button>
+                            <button id ="new_image"> 새로운 이미지로 등록하기 </button>
+                        </td>
+                    </tr>
+                </table>
+                <button id="form_confirm">confirm</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
