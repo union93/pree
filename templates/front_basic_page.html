@@ -2,9 +2,192 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>wit_recycle</title>
-    <link rel="stylesheet" href="front_basic_page.css">
+    <title>PREE</title>
 </head>
+<style>
+body{
+    position: relative;
+    background: #F4F4F4;
+}
+.logo{
+    position: absolute;
+    width: 234px;
+    height: 80px;
+    left: 550px;
+    top: 1px;
+    margine: 0 auto;
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 94px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #3C3C3C;
+}
+#btn_left{
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    left: 900px;
+    top: 70px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    background: #81A58B;
+    border: 0;
+    outline: 0;
+}
+#btn_right{
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    left: 1020px;
+    top: 70px;
+    background: #C4C4C4;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+#btn_create{
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    left: 1100px;
+    top: 200px;
+    background: #81A58B;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+.navbar{
+    width: 696px;
+    height: 30px;
+}
+.navbar ul li{
+    list-style: none;
+    float: left;
+    line-height: 25px;
+    text-align: center;
+}
+.navbar-item{
+    width: 80px;
+    text-decoration: none;
+    display: block;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #6C6262;
+    top: 120px;
+}
+.navbar-item:hover{ /*마우스가 오버시 변하는 스타일*/
+    color: red;
+}
+.navbar-item:active{
+    color: #3C3C3C;
+}
+.navbar-item:visited{
+    color: #3C3C3C;
+}
+
+#nav_post{
+    position: absolute;
+    /*width: 70px;
+    height: 30px;*/
+    left: 700px;
+}
+#nav_practice{
+    position: absolute;
+    width: 175px;
+    height: 30px;
+    left: 780px;
+}
+#nav_community{
+    position: absolute;
+    width: 112px;
+    height: 30px;
+    left: 950px;
+}
+#nav_funding{
+    position: absolute;
+    width: 56px;
+    height: 30px;
+    left: 1080px;
+    text-align: center;
+}
+#nav_event{
+    position: absolute;
+    width: 84px;
+    height: 30px;
+    left: 1150px;
+}
+.post_list_img{
+    width: 343px;
+    height: 168px;
+}
+#post_table{
+    margin-left: 200px;
+    margin-right: 200px;
+    background: #C4C4C4;
+}
+.nav_post{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 23px;
+    /* identical to box height */
+    color: #616161;
+    text-decoration: none;
+    display: block;
+    top: 190px;
+}
+#nav_post_new{
+    position: absolute;
+    width: 140px;
+    height: 23px;
+    left: 430px;
+}
+#nav_post_today{
+    position: absolute;
+    width: 166px;
+    height: 23px;
+    left: 600px;
+}
+#nav_post_month{
+    position: absolute;
+    width: 166px;
+    height: 23px;
+    left: 780px;
+}
+hr.nav_post_line{
+    position: absolute;
+    width: 560px;
+    height: 0px;
+    left: 400px;
+    top: 220px;
+    border: 2px solid #698F74;
+}
+</style>
 <body>
     <div class="left_container">
         <button type="button" id="btn_left" onclick="location.href='mypage.html'">MYPAGE</button>
@@ -13,13 +196,16 @@
     <div class="logo">LOGO</div>
     <nav class="navbar" role="navigation">
         <ul>
-            <li><a class="navbar-item" id="nav_post" href=" ">포스트</a></li>
+            <li><a class="navbar-item" id="nav_post" href="{% url 'post:index' %}">포스트</a></li>
             <li><a class="navbar-item" id="nav_practice" href=" ">실천 타임라인</a></li>
             <li><a class="navbar-item" id="nav_community" href=" ">커뮤니티</a></li>
             <li><a class="navbar-item" id="nav_funding" href=" ">펀딩</a></li>
             <li><a class="navbar-item" id="nav_event" href=" ">이벤트</a></li>
         </ul>
     </nav>
+
+{% block content %}
+{% endblock %}
 
 </body>
 </html>
