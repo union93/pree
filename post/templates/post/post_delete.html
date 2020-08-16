@@ -1,0 +1,13 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+
+<div class="alert alert-primary" role="alert">
+  {{object}}를 삭제하시겠습니까?
+</div>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" value="삭제">
+</form>
+
+{% endblock %}
