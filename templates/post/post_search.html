@@ -1,0 +1,31 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+
+<table id="post_table">
+    <a href="{% url 'post:index' %}" class="back_to_post"><  포스트 목록으로</a>
+    <div class="post_type">
+        <a class="nav_post" id="nav_post_new" href="{% url 'post:index' %}">최신 포스트</a>
+        <a class="nav_post" id="nav_post_today" href="{% url 'post:today' %}">오늘의 포스트</a>
+        <a class="nav_post" id="nav_post_month" href="{% url 'post:month' %}">이달의 포스트</a>
+        <hr class="nav_post_line">
+    <tbody>
+    {% if not posts %}
+
+        <div class="no_search">검색 결과가 없습니다</div>
+
+    {% else %}
+
+    {% for post in posts.all %}
+        <tr class="text-center">
+            <td><a href="{% url 'post:detail' post.id %}"><img src=" {{ post.image.url }}" class="post_list_img" alt="..."></a></td>
+            <td><a href="{% url 'post:detail' post.id %}" class="post_list_title">{{ post.title|truncatechars:30 }}</a>
+                <br><a href="{% url 'post:detail' post.id %}" class="post_list_text"><br/>{{ post.text|truncatechars:79 }}</a><br><br><br></td>
+        </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+    </div>
+</table>
+
+
+{% endblock %}
