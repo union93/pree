@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_DIRS = (
-    os.path.join(BASE_DIR, 'post', 'static', 'community')
+    os.path.join(BASE_DIR, 'main', 'post', 'static', 'community')
 )
 
 MEDIA_URL = '/res/'

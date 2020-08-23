@@ -1,4 +1,6 @@
 from datetime import timezone
+
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.db import models
@@ -20,5 +22,9 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post:detail', args=[self.id])
+
+    def get_image_url(self):
+        return '%s%s' % (settings.MEDIA_URL, self.image)
+
 
 

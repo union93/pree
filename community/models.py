@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -17,3 +18,6 @@ class Community(models.Model):
 
     def get_absolute_url(self):
        return reverse('community:detail', args=[self.id])
+
+    def get_image_url(self):
+        return '%s%s' % (settings.MEDIA_URL, self.image)

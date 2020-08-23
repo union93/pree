@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PREE</title>
+</head>
+<style>
+body{
+    background: #E5E5E5;
+}
+/*--------------------------leftside-------------*/
+#left_side_content{
+    position: absolute;
+    float:left;
+    width: 600px;
+    height: 100%;
+    left:0px;
+    top:0px;
+    background: #81A58B;
+}
+/*--------------------------leftside_top*/
+#left_side_top{
+    position: relative;
+    width:100%;
+    height: 30%;
+    left:0px;
+    top:0px;
+}
+#logo a{
+    position: absolute;
+    width: 340px;
+    height: 80px;
+    left: 80px;
+    top: 62px;
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 96px;
+    display: flex;
+    align-items: center;
+    color: #3C3C3C;
+    text-decoration: none;
+}
+/*--------------------------leftside_bottom*/
+#login_btn{
+    position: absolute;
+    width: 239.67px;
+    height: 54px;
+    left: 336.92px;
+    top: 284.39px;
+    background: #C2D0C1;
+    border-radius: 24px;
+    outline: 0;
+    border: 0;
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+#signup_btn{
+    position: absolute;
+    width: 239.67px;
+    height: 54px;
+    left: 336.92px;
+    top: 371.39px;
+    background: #516C58;
+    border-radius: 24px;
+    outline: 0;
+    border: 0;
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #516C58;
+}
+/*--------------------------rightside-------------
+#right_side_post_content{
+    position: absolute;
+    float:left;
+    width: calc((1900px / 4) * 3);
+    height: 100%;
+    left:calc(1900px / 4);
+    top:-18px;
+}*/
+/*--------------------------rightside_header
+#header {
+    position: relative;
+    width: 100%;
+    height: 15%;
+    top: 0px;
+    left: 0px;
+
+}*/
+#nav{
+    position: absolute;
+    width: 642px;
+    height: 26px;
+    left: 1000px;
+    top: 105px;
+}
+#nav ul{
+    position: relative;
+    width: max-content;
+    top:20px;
+    left:250px;
+}
+#nav ul li{
+    float:left;
+    margin-left: 45px;
+    list-style: none;
+    line-height: 24px;
+    text-align: center;
+}
+#nav ul li a{
+    text-decoration: none;
+    color: #6C6262;
+    font-family: Koho;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+}
+/*--------------------------rightside_content*/
+#content{
+    position: relative;
+    left:0px;
+    top:0px;
+    width:100%;
+    height: 85%;
+
+}
+/*--------------------------rightside_funding*/
+#funding_post{
+    position: absolute;
+width: 342px;
+height: 510px;
+left: 786px;
+top: 212px;
+
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 28px;
+    color: #000000;
+}
+#funding_post ul {
+    list-style: none;
+}
+#funding_post ul li{
+    margin-bottom: 40px;
+}
+#funding_first{
+    position: absolute;
+width: 336px;
+height: 201px;
+left: 6px;
+top: 57px;
+background: #C4C4C4;
+}
+#p_bar1{
+    position: absolute;
+    width: 242px;
+    height: 0px;
+    left: 6px;
+    top: 260.98px;
+    border: 10px solid #6E9679;
+}
+#funding_second{
+   position: absolute;
+    width: 336px;
+    height: 201px;
+    left: 6px;
+    top: 298px;
+    background: #C4C4C4;
+}
+#p_bar2{
+    position: absolute;
+    width: 150px;
+    height: 0px;
+    left: 6.98px;
+    top: 498px;
+    border: 10px solid #6E9679;
+}
+
+/*--------------------------rightside_today*/
+#today_post{
+    position: absolute;
+    width: 599px;
+    height: 523px;
+    left: 1300px;
+    top: 212px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 28px;
+    color: #000000;
+    text-decoration: none;
+}
+#today_post a{
+color: #000000;
+    text-decoration: none;
+    }
+
+#today_post ul{
+    list-style: none;
+}
+#today_post ul li{
+     margin-bottom: 40px;
+}
+.post{
+    position: relative;
+    width: 221px;
+    height: 139px;
+    float:left;
+    right:40px;
+    bottom: 12px;
+
+}
+.post_title{
+    float:left;
+    font-family: Advent Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    width: 321px;
+    height: 45px;
+    position: relative;
+    bottom: 37px;
+}
+.post_text{
+    float:left;
+    font-family: Aladin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    width: 312px;
+    height: 45px;
+    position: relative;
+    bottom: 37px;
+
+}
+/*--------------------------rightside_banner*/
+#banner{
+    position: absolute;
+    width: 1400px;
+    height: 176px;
+    left: 590px;
+    top: 804px;
+    display: block;
+    border: solid 1px black;
+}
+#btn_left{
+    position: absolute;
+    width: 132.64px;
+    height: 27px;
+    left: 1660px;
+    top: 63px;
+    background: #81A58B;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+#btn_right{
+    position: absolute;
+    width: 132.64px;
+    height: 27px;
+    left: 1827px;
+    top: 63px;
+    background: #C4C4C4;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+
+</style>
+<body>
+    <div id="page_wrap">
+        <div id="btn">
+            <button type="button" id="btn_left" onclick="location.href='mypage.html'">MYPAGE</button>
+            <button type="button" id="btn_right" onclick="location.href='logout.html'">LOGOUT</button>
+        </div>
+        <div id="left_side_content">
+            <div id ="left_side_top">
+                 <div id="logo">
+                  <a href="#">PREE</a>
+                 </div>
+            </div>
+            <div id="left_side_bottom">
+                <div id="login">
+                  <button id="login_btn">LOGIN</button>
+                  <button id="signup_btn">SIGNUP</button>
+                </div>
+            </div>
+            <img id="bottle" src="/static/bottle.png">
+        </div>
+        <div id="right_side_post_content">
+            <div id="header">
+                <div id="nav">
+                    <ul>
+                        <li>
+                            <a href="{% url 'post:index' %}">포스트</a>
+                        </li>
+                        <li>
+                            <a href="#">실천 타임라인</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'community:index' %}">커뮤니티</a>
+                        </li>
+                        <li>
+                            <a href="#">펀딩</a>
+                        </li>
+                        <li>
+                            <a href="#">이벤트</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <div id="funding_post">
+                    Funding
+                    <ul>
+                        <li><img id="funding_first" >
+                            <a href="#"></a>
+                            <div id="p_bar1">
+                                <div id="progress1"></div>
+                                <p id ="progress1_text"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <img id="funding_second" >
+                            <div id="p_bar2">
+                                <div id="progress2"></div>
+                                <p id ="progress2_text"></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="today_post"><a href="{% url 'post:index' %}"> New Post</a>
+
+                   <ul>
+                          {% for post in posts.all %}
+                        <li>
+                            <a href="{% url 'post:detail' post.id %}"><img id="post_first"  class="post" src=" {{ post.image.url }}" ></a>
+                            <a href="{% url 'post:detail' post.id %}"><p id="title_1" class="post_title">{{ post.title |truncatechars:30 }}</p></a>
+                            <a href="{% url 'post:detail' post.id %}"><p id="article_1" class="post_text">{{ post.text |truncatechars:40 }}</p></a>
+                        </li>
+                       {% endfor %}
+                    </ul>
+                </div>
+               <div id ="banner">
+
+               </div>
+            </div>
+        </div>
+     </div>
+
+
+
+</body>
+</html>

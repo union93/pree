@@ -15,7 +15,6 @@ body{
     height: 80px;
     left: 843px;
     top: 56px;
-
     font-family: KoHo;
     font-style: normal;
     font-weight: bold;
@@ -24,8 +23,8 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
-
     color: #3C3C3C;
+    text-decoration: none;
 }
 #btn_left{
     position: absolute;
@@ -747,7 +746,7 @@ border: 1px solid #698F74;
         <button type="button" id="btn_left" onclick="location.href='mypage.html'">MYPAGE</button>
         <button type="button" id="btn_right" onclick="location.href='logout.html'">LOGOUT</button>
     </div>
-    <div class="logo">PREE</div>
+    <a class="logo" href="{% url 'first' %}">PREE</a>
     <nav class="navbar" role="navigation">
         <ul>
             <li><a class="navbar-item" id="nav_post" href="{% url 'post:index' %}">포스트</a></li>
