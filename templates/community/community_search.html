@@ -1,0 +1,32 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+
+<table id="community_table">
+    <a href="{% url 'community:index' %}" class="back_to_commu"><  커뮤니티 목록으로</a>
+    <tbody>
+    {% if not communitys %}
+        <div class="no_search">검색 결과가 없습니다</div>
+
+    {% else %}
+
+    <tr class="commu_table_head">
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>날짜</th>
+    </tr>
+    <hr class="nav_community_line">
+    {% for object in communitys.all %}
+         <tr class="text-center">
+             <td style="border-bottom: 1px solid black"><a href="{% url 'community:detail' object.id %}" class="community_list_title">{{ object.id }}</a></td>
+             <td style="border-bottom: 1px solid black"><a href="{% url 'community:detail' object.id %}" class="community_list_title">{{ object.title|truncatechars:30 }}</a></td>
+             <td style="border-bottom: 1px solid black"><a href="{% url 'community:detail' object.id %}" class="community_list_title">{{ object.author }}</a></td>
+             <td style="border-bottom: 1px solid black"><a href="{% url 'community:detail' object.id %}" class="community_list_title">{{ object.created }}</a></td>
+         </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+
+{% endblock %}

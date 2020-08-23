@@ -13,7 +13,6 @@ urlpatterns = [
     path("today/", PostTodayList.as_view(), name='today'),
     path("month/", PostMonthList.as_view(), name='month'),
     path("search/", search, name='search')
-
 ]
 
 from django.conf.urls.static import static

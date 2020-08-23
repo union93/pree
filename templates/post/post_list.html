@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-     <button type="button" id="btn_create" onclick="location.href={% url 'post:create' %}">글 작성하기</button>
+     <button type="button" id="btn_create" onclick="location.href='{% url 'post:create' %}'">글 작성하기</button>
 <table id="post_table">
     <div class="post_type">
         <a class="nav_post" id="nav_post_new" href="{% url 'post:index' %}">최신 포스트</a>
@@ -15,7 +15,7 @@
                 <tr class="text-center">
                     <td><a href="{% url 'post:detail' object.id %}"><img src=" {{ object.image.url }}" class="post_list_img" alt="..."></a></td>
                     <td><a href="{% url 'post:detail' object.id %}" class="post_list_title">{{ object.title|truncatechars:30 }}</a>
-                    <br><a href="{% url 'post:detail' object.id %}" class="post_list_text"><br/>{{ object.text|truncatechars:79 }}</a><br><br><br></td>
+                    <br><a href="{% url 'post:detail' object.id %}" class="post_list_text"><br/>{{ object.text|truncatechars:79 }}</a><br><br><br><br><br></td>
                 </tr>
             {% endfor %}
         {% else %}

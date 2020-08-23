@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post'
+    'post',
+    'community'
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_DIRS = (
-    os.path.join(BASE_DIR, 'post', 'static')
+    os.path.join(BASE_DIR, 'post', 'static', 'community')
 )
 
 MEDIA_URL = '/res/'

@@ -1,17 +1,11 @@
-from distutils.log import Log
-from time import timezone
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView, FormMixin
 from django.views.generic.detail import DetailView
 from django.views.generic import FormView
-from post.forms import PostSearchForm, CreatePost
+from post.forms import PostSearchForm
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import Post
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
 from datetime import date, datetime
 
 class PostTodayList(ListView):
@@ -104,13 +98,13 @@ class PostCreate(CreateView):
     model = Post
     fields = ['title', 'text', 'image']
     template_name_suffix = '_create'
-    success_url = '/'
+    success_url = '/post'
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id
         if form.is_valid():
             form.instance.save()
-            return redirect('/')
+            return redirect('/post')
         else:
             return self.render_to_response({'form': form})
 
@@ -119,7 +113,7 @@ class PostUpdate(UpdateView):
     context_object_name = 'update_post'
     fields = ['title', 'text', 'image']
     template_name_suffix = '_update'
-    success_url = '/'
+    success_url = '/post'
 
     def get_object(self):
         update_post = get_object_or_404(Post, pk=self.kwargs['pk'])
@@ -129,7 +123,7 @@ class PostUpdate(UpdateView):
 class PostDelete(DeleteView):
     model = Post
     template_name_suffix = '_delete'
-    success_url = '/'
+    success_url = '/post'
 
 class PostDetail(DetailView):
     model = Post

@@ -73,12 +73,30 @@ body{
     font-weight: bold;
     font-size: 20px;
     line-height: 20px;
-    /* identical to box height */
     text-align: center;
     color: #FFFFFF;
     border: 0;
     outline: 0;
 }
+#btn_create_post{
+position: absolute;
+    width: 130px;
+    height: 32px;
+    left: 1445px;
+    top: 325px;
+    background: #6E9679;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+    }
+
 
 .no_search{
     position: absolute;
@@ -169,7 +187,7 @@ body{
 #post_table{
     position: absolute;
     width: 1243px;
-    height: 170px;
+    height: 200px;
     left: 309px;
     top: 403px;
     background: #C4C4C4;
@@ -277,9 +295,6 @@ hr.nav_post_line{
     top: 1359px;
 }
 .wrap_pagination ul li{
-    /*margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    border : 0;*/
     margin-left: 30px;
     float: left;
     list-style-type: none;
@@ -627,6 +642,105 @@ font-family: NanumGothic;
     border: 0;
     outline: 0;
 }
+.wrap_commu_pagination{
+    position: absolute;
+    width: 410px;
+    height: 31px;
+    left: 753px;
+    top: 950px;
+}
+.wrap_commu_pagination ul li{
+    margin-left: 30px;
+    float: left;
+    list-style-type: none;
+}
+.community_list_title{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 25px;
+    color: #000000;
+    text-decoration: none;
+    width: 683px;
+    height: 45px;
+}
+.commu_table_head{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 25px;
+    color: #000000;
+    text-decoration: none;
+    width: 683px;
+    height: 30px;
+    text-align: center;
+}
+#community_table{
+    position: absolute;
+    width: 1350px;
+    height: 510px;
+    left: 309px;
+    top: 390px;
+    text-align: center;
+}
+.commu_search_input{
+    position: absolute;
+    width: 927px;
+    height: 48px;
+    left: 442px;
+    top: 1050px;
+    background: #C4C4C4;
+    border: 0;
+    outline: 0;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.commu_btn_search{
+    position: absolute;
+    width: 96px;
+    height: 42px;
+    left: 1383px;
+    top: 1050px;
+    background: #81A58B;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+hr.nav_community_line{
+position: absolute;
+width: 1330px;
+height: 0px;
+left: 309px;
+top: 416px;
+border: 1px solid #698F74;
+}
+.back_to_commu{
+ position: absolute;
+    width: 321px;
+    height: 24px;
+    left: 1400px;
+    top: 340px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+}
+
 </style>
 <body>
     <div class="left_container">
@@ -637,8 +751,8 @@ font-family: NanumGothic;
     <nav class="navbar" role="navigation">
         <ul>
             <li><a class="navbar-item" id="nav_post" href="{% url 'post:index' %}">포스트</a></li>
-            <li><a class="navbar-item" id="nav_practice" href=" ">실천 타임라인</a></li>
-            <li><a class="navbar-item" id="nav_community" href=" ">커뮤니티</a></li>
+            <li><a class="navbar-item" id="nav_practice" href="">실천 타임라인</a></li>
+            <li><a class="navbar-item" id="nav_community" href="{% url 'community:index' %}">커뮤니티</a></li>
             <li><a class="navbar-item" id="nav_funding" href=" ">펀딩</a></li>
             <li><a class="navbar-item" id="nav_event" href=" ">이벤트</a></li>
         </ul>

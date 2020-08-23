@@ -1,0 +1,37 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+<div class="row">
+  <a class="post_create_intro" href="{% url 'community:index' %}"> 커뮤니티 수정 </a>
+
+  <div class="col-12 col-xl-8 col-md-8">
+    <form class="form_commu_update" id="form_commu_update" action="{% url 'community:update' update_community.id %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="form-group row ">
+            {% if field == form.title %}
+                <label for="id_title" id="post_title">{{ field.label_tag }}</label><br><br>
+                <input type="text" class="post_title_input" name="title" value="{{ update_community.title }}" required id ="id_title">
+            {% endif %}
+            {% if field == form.text %}
+                <label for="id_text" id="post_text">{{ field.label_tag }}</label>
+                <textarea name="text" class="post_text_input" form="form_commu_update" cols="40" rows="5" required id="id_text">{{ update_community.text }}</textarea>
+            {% endif %}
+            {% if field == form.image %}
+                <label id="post_image">{{ field.label_tag }}</label>
+
+                <div class="post_image_input">{{ field }}</div>
+            {% endif %}
+            {% if field.errors %}
+                {% for e in field.errors %}
+                    <p style="color:palevioletred;">{{ e | escape }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+      <input type="submit" value="확인" class="btn_post_upload">
+          <button type="button" onclick="location.href='{% url 'community:index' %}'" class="btn_post_unload" >취소</button>
+
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

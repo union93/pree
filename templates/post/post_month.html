@@ -14,7 +14,7 @@
                 <tr class="text-center">
                     <td><a href="{% url 'post:detail' object.id %}"><img src=" {{ object.image.url }}" class="post_list_img" alt="..."></a></td>
                     <td><a href="{% url 'post:detail' object.id %}" class="post_list_title">{{ object.title|truncatechars:30 }}</a>
-                    <br><a href="{% url 'post:detail' object.id %}" class="post_list_text"><br/>{{ object.text|truncatechars:79 }}</a><br><br><br></td>
+                    <br><a href="{% url 'post:detail' object.id %}" class="post_list_text"><br/>{{ object.text|truncatechars:79 }}</a><br><br><br><br><br></td>
                 </tr>
             {% endfor %}
         {% else %}
