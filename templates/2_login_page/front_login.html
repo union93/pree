@@ -9,7 +9,9 @@
     <div class="all">
         <div class="logo">LOGO </div>
         <form action="" method="POST" class="login_form">
-            <div class="id_form">
+            {% csrf_token %}
+            {{ form.as_p }}
+           <!-- <div class="id_form">
                 <label for="email_id" id="label_id">ID</label>
                 <input type="email" name="email_id" class="email_id" id="email_id" required>
                 <br>
@@ -22,7 +24,8 @@
             <div id="btn_wrapper">
             <button type="submit" id="btn_submit">LOGIN</button>
             <button type="button" id="btn_signup" onclick="location.href='signup.html'">SIGNUP</button>
-            </div>
+            </div> -->
+            <input type="submit" value="로그인">
         </form>
     </div>
 </body>

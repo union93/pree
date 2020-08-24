@@ -1,23 +1,22 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from .models import User
+from accounts.models import User
 
-
-class UserCreationForm(forms.ModelForm):
+class UserFrom(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password_Check', widget=forms.PasswordInput)
-
+    password2 = forms.CharField(label='Password Confirm', widget=forms.PasswordInput)
 
     class Meta:
-        model = User
-        fields =('email','date_of_birth','phone','nick_name','profile_ph')
+        model= User
+        fields = ['email','username','password','date_of_birth','profile_image','phone']
 
-    def confirm_password(self):
+
+    def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
-        if password1 and password2 and password1 !=  password2:
-            raise forms.ValidationError("패스워드 확인이 일치하지 않습니다.!")
+        if password1 and password2 and password1  != password2:
+            raise forms.ValidationError("비밀번호가 일치하지 않습니다!")
         return password2
 
     def save(self, commit=True):
@@ -31,7 +30,16 @@ class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()
 
     class Meta:
-        model = User
-        fileds = ('email','date_of_birth','phone','nick_name','profile_ph')
-    def cofirm_password(self):
+        model= User
+        fields=('email','username','password','date_of_birth','profile_image','phone')
+    def clean_password(self):
         return self.initial["password"]
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields=['email','password']
+
+
+
+

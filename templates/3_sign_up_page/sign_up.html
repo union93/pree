@@ -10,13 +10,10 @@
 </div>
 <div id ="decoration_line"></div>
 <div id="right_side">
-    <form method="post" action="" id="sign_up_request">
-        <p id =email_head class="text_h"></p><input type="email" id="email_input" name="email" class ="input_line">
-        <p id =email_head class="text_h"></p><input type="email" id="email_input" name="email" class ="input_line">
-        <p id =email_head class="text_h"></p><input type="email" id="email_input" name="email" class ="input_line">
-        <p id =email_head class="text_h"></p><input type="email" id="email_input" name="email" class ="input_line">
-        <p id =email_head class="text_h"></p><input type="email" id="email_input" name="email" class ="input_line">
-        <p id =email_head class="text_h"></p><input type="email" id="email_input" name="email" class ="input_line">
+    <form method="post" action="{}" id="sign_up_request">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="회원가입">
     </form>
 </div>
 
