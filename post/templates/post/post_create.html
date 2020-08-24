@@ -1,0 +1,13 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+<div class="row">
+  <div class="col">
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      {{form.as_p}}
+      <input type="submit" value="Upload" class="btn btn-primary">
+    </form>
+  </div>
+</div>
+{% endblock %}

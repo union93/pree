@@ -1,10 +1,9 @@
 from datetime import timezone
-
 from django.conf import settings
-from django.contrib.auth import get_user_model
-from accounts.models import User
+
 from django.db import models
 from django.urls import reverse
+from accounts.models import User
 
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')

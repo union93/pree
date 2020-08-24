@@ -1,0 +1,12 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-12 col-xl-8 col-md-8">
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Upload">
+    </form>
+</div>
+</div>
+{% endblock %}
