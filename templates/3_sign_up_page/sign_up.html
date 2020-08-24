@@ -3,17 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <title>sign_up</title>
+   <style>
+       #left_side{
+           position: absolute;
+           width: 678px;
+           height: 1024px;
+           left:0px;
+           top:0px;
+           background: #81A58B;
+       }
+       #sign_up_logo{
+           position: absolute;
+           width: 605px;
+           height: 80px;
+           left: 38px;
+            top: 149px;
+       }
+       #sign_up_logo a{
+           font-family: KoHo;
+           font-style: normal;
+           font-weight: bold;
+           font-size: 144px;
+           line-height: 187px;
+           display: flex;
+           align-items: center;
+           text-align: center;
+           color: #3C3C3C;
+       }
+       #decoration_line{
+           position: absolute;
+           width: 43px;
+           height: 1024px;
+           left: 638px;
+           top: 0px;
+           background: #C1CBC0;
+       }
+       #right_side{
+           position: absolute;
+           top:0px;
+           left:681px;
+           width:1240px;
+           height: 1024px;
+           background: #81A58B;
+
+
+       }
+
+       .reddot{
+           color:  #A71E1E;
+           font-size: 40px;
+       }
+       .input_line{
+           border-top:none;
+           border-left:none;
+           border-right:none;
+           border-bottom: 3px solid #4A4A4A;
+           background: none;
+
+           position: absolute;
+           left: 141px;
+       }
+       #email{
+           width: 485px;
+           top: 391px;
+       }
+       #password1{
+           width: 485px;
+           top: 445px;
+       }
+       #password2{
+           width: 485px;
+           top: 502px;
+       }
+       #nickname{
+           width: 485px;
+           top: 551px;
+       }
+       #date_time{
+           width: 485px;
+           top: 604px;
+       }
+       #phone{
+           width: 485px;
+           top: 659px;
+       }
+       #profile_basic{
+           position: absolute;
+           width: 481.68px;
+           height: 27px;
+           left: 142px;
+           top: 695px;
+           background: #516C58;
+            border: none;
+           border-radius:4px ;
+
+           font-family: NanumGothic;
+           font-style: normal;
+           font-weight: normal;
+           font-size: 18px;
+           line-height: 18px;
+           text-align: center;
+           color: #FFFFFF;
+       }
+       #profile_new{
+           position: absolute;
+           width: 481.68px;
+           height: 27px;
+           left: 142px;
+           top: 730px;
+           background: #516C58;
+           border: none;
+           border-radius:4px ;
+
+           font-family: NanumGothic;
+           font-style: normal;
+           font-weight: normal;
+           font-size: 18px;
+           line-height: 18px;
+           text-align: center;
+           color: #FFFFFF;
+       }
+       #sing_button{
+           position: absolute;
+           width: 132.64px;
+           height: 27px;
+           left: 294px;
+           top: 785px;
+           background: #CBAA4A;
+
+           font-family: NanumGothic;
+           font-style: normal;
+           font-weight: bold;
+           font-size: 18px;
+           line-height: 18px;
+           text-align: center;
+           color: #FFFFFF;
+           border: none;
+           border-radius:4px ;
+       }
+
+   </style>
 </head>
 <body>
 <div id="left_side">
-
+    <p id="sign_up_logo"><a>PREE</a></p>
 </div>
 <div id ="decoration_line"></div>
 <div id="right_side">
-    <form method="post" action="{}" id="sign_up_request">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="회원가입">
+    <form method="POST" action="{}" id="sign_up_request">
+       <div id = input_area>
+        <p>이메일</p><input type="email" id="email" name="email" required class="input_line">
+        <p>닉네임</p><input type="text" id="nickname" name="nickname" required class="input_line">
+        <p>비밀번호</p><input type="password" id="password1" name="password1" required class="input_line">
+        <input type="password" id="password2" name="password2" required placeholder="비밀번호 확인" class="input_line">
+        <p>생년월일</p><input type="date" id="date_time" name="date_time" required class="input_line" placeholder="YYYY-MM-DD">
+        <p>폰번호</p><input type="text" id="phone" name="phone" placeholder="010-0000-0000" class="input_line">
+        <p>사진</p><input type="button" id="profile_basic" name="basic_profile" value="기본이미지 사용하기">
+        <input type="button" id="profile_new" name="new_profile" value="새 이미지 등록하기">
+        <input type="submit" value="회원가입" id="sing_button">
+       </div>
     </form>
 </div>
 

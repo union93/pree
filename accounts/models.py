@@ -44,7 +44,7 @@ class User(AbstractUser):
         verbose_name='전화번호',
         max_length=255
     )
-    date_of_birth=models.DateTimeField(
+    date_of_birth=models.CharField(
         verbose_name='생년월일',
         null=True
     )
