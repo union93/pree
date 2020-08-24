@@ -16,18 +16,16 @@ class UserManager(BaseUserManager):
         return user
 
     def create_user(self,email,username="",password = None, **extra_fields):
-        extra_fields.setdefault('is_superuser', False)
+        extra_fields.setdefault('is_admin', False)
         return self._create_user(email, username, password, **extra_fields)
 
     def create_superuser(self, email,username="관리자", password=None , **extra_fields):
-        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_admin', True)
 
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError('슈퍼유저는 반드시 is_superuser가 참이여야합니다')
-
+        if extra_fields.get('is_admin') is not True:
+            raise ValueError('슈퍼유저는 반드시 is_admin가 참이여야합니다')
         return self._create_user(email,username,password,**extra_fields)
 
-DEFAULT = 'templates/resource/defaultProfileImg.png'
 
 class User(AbstractUser):
     email=models.EmailField(
@@ -47,14 +45,6 @@ class User(AbstractUser):
     date_of_birth=models.DateTimeField(
         verbose_name='생년월일',
         null=True
-    )
-    profile_image=models.ImageField(
-        verbose_name='프로필사진',
-        default=DEFAULT
-    )
-    is_profile_image = models.BooleanField(
-        verbose_name='프로필사진여부',
-        default=False
     )
     is_active=models.BooleanField(
         default=True,
