@@ -21,8 +21,10 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, email,username="관리자", password=None , **extra_fields):
         extra_fields.setdefault('is_admin', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_staff', True)
 
-        if extra_fields.get('is_admin') is not True:
+        if extra_fields.get('is_superuser') is not True:
             raise ValueError('슈퍼유저는 반드시 is_admin가 참이여야합니다')
         return self._create_user(email,username,password,**extra_fields)
 
@@ -52,6 +54,14 @@ class User(AbstractUser):
     is_admin=models.BooleanField(
         default=False,
         verbose_name='관리자 확인'
+    )
+    is_superuser = models.BooleanField(
+        default=False,
+        verbose_name='슈퍼유저 확인'
+    )
+    is_staff = models.BooleanField(
+        default=False,
+        verbose_name='스태프확인'
     )
 
     object = UserManager()
