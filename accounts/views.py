@@ -1,6 +1,5 @@
 from django.contrib import auth
-from django.shortcuts import redirect, render
-
+from django.shortcuts import redirect, render ,HttpResponse
 from accounts.models import User
 
 
@@ -11,27 +10,32 @@ def signup(request):
                 email=request.POST['email'],
                 username=request.POST['nickname'],
                 password=request.POST['password1'],
-                date_of_birth =request.POST['date_time'],
+                date_of_birth=request.POST['date_time'],
                 phone=request.POST['phone']
             )
             auth.login(request, user)
-            return redirect('')
-        return render(request,'3_sign_up_page/sign_up.hmtl')
+            return redirect('main:first')
+        else:
+            return redirect('accounts:signup')
+    return render(request, '3_sign_up_page/sign_up.html')
+
+
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        user = auth.authenticate(request, email=email,password =password)
+        user = auth.authenticate(request, email=email, password=password)
         if user is not None:
-            auth.login(request, user )
-            return redirect('')
+            auth.login(request, user)
+            return redirect('main:first')
         else:
-            return render(request,'2_login_page/front_login.html',{'error': '이메일 혹은 비밀번호가 올바르지 않습니다.'})
+            return render(request, '2_login_page/front_login.html', {'error': '이메일 혹은 비밀번호가 올바르지 않습니다.'})
     else:
-        return render(request,'2_login_page/front_login.html' )
+        return render(request, '2_login_page/front_login.html')
+
 
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        return redirect('')
-    return render(request,'2_login_page/front_login.html')
+        return redirect('main:first')
+    return render(request, '2_login_page/front_login.html')

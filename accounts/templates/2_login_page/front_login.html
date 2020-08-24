@@ -1,4 +1,11 @@
-body{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wit_recycle</title>
+    <link rel="stylesheet" href="front_login.css">
+    <style>
+        body{
     background: #81A58B;
     position: relative;
     /*width: 1820px;
@@ -113,3 +120,29 @@ body{
     border: 0;
     outline: 0;
 }
+
+    </style>
+</head>
+<body>
+    <div class="all">
+        <a class="logo" href="{% url 'main:first' %}">PREE </a>
+        <form action="{% url 'accounts:login' %}" method="POST" class="login_form">
+            {% csrf_token %}
+         <div class="id_form">
+                <label for="email_id" id="label_id">ID</label>
+                <input type="email" name="email" class="email_id" id="email" required>
+                <br>
+            </div>
+            <div class="pwd_form">
+                <label for="pwd" id="label_pwd">PASSWORD</label>
+                <input type="password" name="password" id="password" class="pwd" required>
+                <br>
+            </div>
+            <div id="btn_wrapper">
+            <button type="submit" id="btn_submit">LOGIN</button>
+            <button type="button" id="btn_signup" onclick="location.href='signup.html'">SIGNUP</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
