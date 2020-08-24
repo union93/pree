@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PREE</title>
+</head>
+<style>
+body{
+    position: relative;
+    background: #E5E5E5;
+}
+.logo{
+    position: absolute;
+    width: 234px;
+    height: 80px;
+    left: 843px;
+    top: 56px;
+    font-family: KoHo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 94px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #3C3C3C;
+    text-decoration: none;
+}
+#btn_left{
+    position: absolute;
+    width: 132.64px;
+    height: 27px;
+    left: 1321px;
+    top: 63px;
+    background: #81A58B;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+#btn_right{
+    position: absolute;
+    width: 132.64px;
+    height: 27px;
+    left: 1477px;
+    top: 63px;
+    background: #C4C4C4;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+#btn_create{
+    position: absolute;
+    width: 130px;
+    height: 32px;
+    left: 1445px;
+    top: 325px;
+    background: #6E9679;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+#btn_create_post{
+position: absolute;
+    width: 130px;
+    height: 32px;
+    left: 1445px;
+    top: 325px;
+    background: #6E9679;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+    }
+
+
+.no_search{
+    position: absolute;
+    width: 2000px;
+    height: 42px;
+    left: 350px;
+    top: 500px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 24px;
+    color: #000000;
+}
+.navbar{
+    position: absolute;
+    width: 642px;
+    height: 26px;
+    left: 968px;
+    top: 192px;
+
+}
+.navbar ul li{
+    list-style: none;
+    /*float: left;*/
+    line-height: 24px;
+    text-align: center;
+}
+.navbar-item{
+    text-decoration: none;
+    /* display: block; */
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #6C6262;
+}
+.navbar-item:hover{ /*마우스가 오버시 변하는 스타일*/
+    color: red;
+}
+.navbar-item:active{
+    color: #3C3C3C;
+}
+.navbar-item:visited{
+    color: #3C3C3C;
+}
+#nav_post{
+    position: absolute;
+    width: 73px; /* figma에서 +5 */
+    height: 24px;
+    left: 11px;
+    top: 0px;
+}
+#nav_practice{
+    position: absolute;
+    width: 155px; /* figma에서 +5 */
+    height: 24px;
+    left: 128px;
+    top: 0px;
+}
+#nav_community{
+    position: absolute;
+    width: 99px; /* figma에서 +5 */
+    height: 24px;
+    left: 323px;
+    top: 0px;
+}
+#nav_funding{
+    position: absolute;
+    width: 54px; /* figma에서 +5 */
+    height: 24px;
+    left: 462px;
+    top: 1px;
+}
+#nav_event{
+    position: absolute;
+    width: 76px; /* figma에서 +5 */
+    height: 24px;
+    left: 556px;
+    top: 0px;
+}
+.post_list_img{
+    width: 343px;
+    height: 168px;
+}
+#post_table{
+    position: absolute;
+    width: 1243px;
+    height: 200px;
+    left: 309px;
+    top: 403px;
+    background: #C4C4C4;
+}
+.nav_post{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 28px;
+    /* identical to box height */
+    color: #616161;
+    text-decoration: none;
+    display: block;
+    top: 265px;
+}
+#nav_post_new{
+    position: absolute;
+    width: 150px; /* +10 */
+    height: 28px;
+    left: 661px;
+}
+#nav_post_today{
+    position: absolute;
+    width: 181px; /* +15 */
+    height: 28px;
+    left: 869px;
+}
+#nav_post_month{
+    position: absolute;
+    width: 181px;
+    height: 28px;
+    left: 1103px;
+}
+hr.nav_post_line{
+    position: absolute;
+    width: 770px;
+    height: 0px;
+    left: 575px;
+    top: 304px;
+    border: 2px solid #698F74;
+}
+.btn_search{
+    position: absolute;
+    width: 96px;
+    height: 42px;
+    left: 1383px;
+    top: 1442px;
+    background: #81A58B;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+.search_input{
+    position: absolute;
+    width: 927px;
+    height: 48px;
+    left: 442px;
+    top: 1439px;
+    background: #C4C4C4;
+    border: 0;
+    outline: 0;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.post_list_title{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 30px;
+    color: #000000;
+    text-decoration: none;
+    width: 683px;
+    height: 45px;
+}
+.post_list_text{
+    position: absolute;
+    width: 760px;
+    height: 48px;
+    left: 450px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+}
+.wrap_pagination{
+    position: absolute;
+    width: 410px;
+    height: 31px;
+    left: 753px;
+    top: 1359px;
+}
+.wrap_pagination ul li{
+    margin-left: 30px;
+    float: left;
+    list-style-type: none;
+}
+.page-link{
+    text-decoration: none;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #8B8888;
+}
+.post_create_intro{
+    position: absolute;
+    width: 416px;
+    height: 43px;
+    left: 323px;
+    top: 284px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 36px;
+    color: #315E35;
+    text-decoration: none;
+}
+input[type="text"]{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;/*
+    border:none;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    border-bottom:0px;*/
+}
+.post_title_input{
+    position: absolute;
+    width: 1133px;
+    height: 45px;
+    left: 454px;
+    top: 368px;
+}
+#post_title{
+    position: absolute;
+    width: 80px;
+    height: 42px;
+    left: 350px;
+    top: 370px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+}
+.post_text_input{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    border:none;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    border-bottom:0px;
+    position: absolute;
+    width: 1251px;
+    height: 550px;
+    left: 336px;
+    top: 467px;
+    border: 1px solid #6F6F6F;
+    box-sizing: border-box;
+    Word-break: break-Word;
+}
+#post_text{
+    position: absolute;
+    width: 1225px;
+    height: 40px;
+    left: 351px;
+    top: 430px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+#post_image{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    position: absolute;
+    width: 80px;
+    height: 42px;
+    left: 351px;
+    top: 1030px;
+}
+.post_image_input{
+    position: absolute;
+    width: 1133px;
+    height: 45px;
+    left: 454px;
+    top: 1030px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+}
+.btn_post_upload{
+    position: absolute;
+    width: 109px;
+    height: 27px;
+    left: 839px;
+    top: 1168px;
+    background: #83AD8E;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+.btn_post_unload{
+    position: absolute;
+    width: 109px;
+    height: 27px;
+    left: 971px;
+    top: 1168px;
+    background: #DED6C9;font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+.post_detail_image{
+    position: absolute;
+    width: 1298px;
+    height: 447px;
+    left: 312px;
+    top: 466px;
+}
+.btn_post_update{
+    position: absolute;
+    width: 63px;
+    height: 27px;
+    left: 1446px;
+    top: 333px;
+    background: #C0A984;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+.btn_post_delete{
+    position: absolute;
+    width: 63px;
+    height: 27px;
+    left: 1519px;
+    top: 333px;
+    background: #2E2E2E;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+hr.post_detail_first_line{
+    position: absolute;
+    width: 1248px;
+    height: 0px;
+    left: 336px;
+    top: 373px;
+    border: 1px solid #000000;
+}
+hr.post_detail_second_line{
+    position: absolute;
+    width: 1248px;
+    height: 0px;
+    left: 336px;
+    top: 1438px;
+    border: 2px solid #000000;
+}
+.back_to_list{
+    position: absolute;
+    width: 321px;
+    height: 24px;
+    left: 301px;
+    top: 272px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+}
+.back_to_post{
+position: absolute;
+    width: 321px;
+    height: 24px;
+    left: 1350px;
+    top:350px;
+font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+}
+.post_detail_title{
+    position: absolute;
+    width: 1133px;
+    height: 45px;
+    left: 332px;
+    top: 300px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 36px;
+    color: #000000;
+}
+.post_detail_author{
+    position: absolute;
+    height: 45px;
+    left: 332px;
+    top: 355px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+.post_detail_date{
+    position: absolute;
+    height: 45px;
+    left: 470px;
+    top: 370px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+.post_detail_text{
+    position: absolute;
+    width: 1300px;
+    height: 281px;
+    left: 312px;
+    top: 950px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+.btn_post_scrap{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 769px;
+    top: 1322px;
+    border: 0;
+    outline: 0;
+}
+.btn_post_recommend{
+    position: absolute;
+    width: 179px;
+    height: 50px;
+    left: 967px;
+    top: 1322px;
+    border: 0;
+    outline: 0;
+}
+.post_delete{
+    position: absolute;
+    width: 20000px;
+    height: 42px;
+    left: 350px;
+    top: 400px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 24px;
+    color: #000000;
+}
+.btn_post_delete_real{
+    position: absolute;
+    top: 500px;
+    left: 350px;
+    background: #83AD8E;
+    width: 109px;
+    height: 30px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+.btn_delete_cancel{
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    background: #DED6C9;
+    width: 109px;
+    height: 33px;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    border: 0;
+    outline: 0;
+}
+.wrap_commu_pagination{
+    position: absolute;
+    width: 410px;
+    height: 31px;
+    left: 753px;
+    top: 950px;
+}
+.wrap_commu_pagination ul li{
+    margin-left: 30px;
+    float: left;
+    list-style-type: none;
+}
+.community_list_title{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 25px;
+    color: #000000;
+    text-decoration: none;
+    width: 683px;
+    height: 45px;
+}
+.commu_table_head{
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 25px;
+    color: #000000;
+    text-decoration: none;
+    width: 683px;
+    height: 30px;
+    text-align: center;
+}
+#community_table{
+    position: absolute;
+    width: 1350px;
+    height: 510px;
+    left: 309px;
+    top: 390px;
+    text-align: center;
+}
+.commu_search_input{
+    position: absolute;
+    width: 927px;
+    height: 48px;
+    left: 442px;
+    top: 1050px;
+    background: #C4C4C4;
+    border: 0;
+    outline: 0;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.commu_btn_search{
+    position: absolute;
+    width: 96px;
+    height: 42px;
+    left: 1383px;
+    top: 1050px;
+    background: #81A58B;
+    font-family: Kavoon;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+    color: #FFFFFF;
+    border: 0;
+    outline: 0;
+}
+hr.nav_community_line{
+position: absolute;
+width: 1330px;
+height: 0px;
+left: 309px;
+top: 416px;
+border: 1px solid #698F74;
+}
+.back_to_commu{
+ position: absolute;
+    width: 321px;
+    height: 24px;
+    left: 1400px;
+    top: 340px;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+}
+
+</style>
+<body>
+    <div class="left_container">
+        <button type="button" id="btn_left" onclick="location.href='mypage.html'">MYPAGE</button>
+        <button type="button" id="btn_right" onclick="location.href='logout.html'">LOGOUT</button>
+    </div>
+    <a class="logo" href="{% url 'first' %}">PREE</a>
+    <nav class="navbar" role="navigation">
+        <ul>
+            <li><a class="navbar-item" id="nav_post" href="{% url 'post:index' %}">포스트</a></li>
+            <li><a class="navbar-item" id="nav_practice" href="">실천 타임라인</a></li>
+            <li><a class="navbar-item" id="nav_community" href="{% url 'community:index' %}">커뮤니티</a></li>
+            <li><a class="navbar-item" id="nav_funding" href=" ">펀딩</a></li>
+            <li><a class="navbar-item" id="nav_event" href=" ">이벤트</a></li>
+        </ul>
+    </nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

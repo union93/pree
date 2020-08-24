@@ -1,0 +1,52 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+
+<div class="row">
+  <div class="col">
+    <div class="card" style="">
+      <a href="{% url 'post:index' %}" class="back_to_list"><  포스트 목록으로</a>
+      <img src=" {{ object.image.url }}" class="post_detail_image" alt="...">
+      <div class="card-body">
+        <h5 class="post_detail_author">{{ object.author }}</h5>
+        <hr class="post_detail_first_line">
+        <div class="author_date">
+        <p class="post_detail_title">{{ object.title }}</p>
+        <p class="post_detail_text">{{ object.text }}</p>
+        {% if object.created == object.updated %}
+          <p class="post_detail_date">{{ object.updated }}</p>
+        {% else %}
+          <p class="post_detail_date">{{ object.created }}</p>
+        {% endif %}
+        </div>
+      </div>
+       <div class="card-body">
+        <button onclick ="location.href='{% url 'post:update' object.id %}'" class="btn_post_update">수정</button>
+        <button onclick ="location.href='{% url 'post:delete' object.id %}'" class="btn_post_delete">삭제</button>
+      </div>
+      <!--{% if user.is_authenticated == object.author %} 로그인 기능 추가하고 확인-->
+      <!--{% endif %}-->
+      <hr class="post_detail_second_line">
+    </div>
+    <div class="btn_post_bottom">
+      <button onclick="location.href=''" class="btn_post_scrap">
+        <img src="/static/scrap_btn.png">
+      </button>
+      <button onclick="location.href=''" class="btn_post_recommend">
+        <img src="/static/recommend_btn.png">
+      </button>
+    </div>
+  </div>
+</div>
+<!--
+<form method="POST" action="/detail/newreply">
+    {% csrf_token %}
+    <input type="hidden" value="{{ post.id }}" name="post">
+    댓글 작성 : <input type="text" name="comment_body"></input>
+    <button type="submit" class="btn btn-secondary">작성</button>
+</form>
+
+{% for comment in post.comments.all %}
+    <p> <span> {{comment.comment_user}} </span> : {{ comment.comment_body }} </p>
+{% endfor %}
+-->
+{% endblock %}

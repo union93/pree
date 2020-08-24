@@ -1,0 +1,32 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+<div class="row">
+    {% if user.is_authenticated %} <!--로그인 기능 추가하고 확인-->
+    <a class="post_create_intro" href="{% url 'community:index' %}"> 커뮤니티 </a>
+  <div class="col">
+
+    <form id="form_community" class=form_commu action=" " method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p>
+      <label for="id_titl" id="post_title">제목</label>
+        <input type="text" class="post_title_input" name="title" placeholder="제목을 입력해 주세요." maxlength="100" required id="id_titl">
+      </p>
+      <p>
+        <label for="id_tex" id="post_text">내용</label>
+            <textarea name="text" class="post_text_input" form="form_community" cols="40" rows="5" placeholder="내용을 입력해 주세요." required id="id_tex" ></textarea>
+      </p>
+       <p>
+        <label for="id_imag" id="post_image">이미지</label>
+         <input type="file" class="post_image_input" name="image" required id="id_imag">
+      </p>
+      <input type="submit" value="확인" class="btn_post_upload">
+      <button type="button" onclick="location.href='{% url 'community:index' %}'" class="btn_post_unload" >취소</button>
+    </form>
+  </div>
+    {% endif %}
+    {% if not user.is_authenticated %} <!--로그인 기능 추가하고 확인-->
+    <div>로그인이 필요한 서비스 입니다.</div>
+    {% endif %}
+
+</div>
+{% endblock %}

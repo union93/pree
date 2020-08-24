@@ -1,0 +1,14 @@
+{% extends 'front_basic_page.html' %}
+{% block content %}
+<a class="post_create_intro"> 포스트 삭제 </a>
+<div class="post_delete" role="alert">
+  [제목: {{object.title}} 게시물] 을 삭제하시겠습니까?
+</div>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn_post_delete_real" value="삭제">
+  <button type="button" onclick="location.href='{% url 'post:index' %}'" class="btn_delete_cancel" >취소</button>
+</form>
+
+{% endblock %}
