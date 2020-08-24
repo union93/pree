@@ -2,7 +2,11 @@ from datetime import timezone
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
+<<<<<<< HEAD
 from django.contrib.auth.models import User
+=======
+from accounts.models import User
+>>>>>>> origin/accouts+posting
 from django.db import models
 from django.urls import reverse
 

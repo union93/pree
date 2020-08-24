@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign_up</title>
+</head>
+<body>
+<div id="left_side">
+
+</div>
+<div id ="decoration_line"></div>
+<div id="right_side">
+    <form method="post" action="{}" id="sign_up_request">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="회원가입">
+    </form>
+</div>
+
+</body>
+</html>
